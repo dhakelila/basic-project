@@ -1,0 +1,25 @@
+{
+  "name": "basic app",
+  "version": "1.0.0",
+  "description": "A webapp",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "requirejs": "~2.1.15",
+    "jquery": "~2.1.1",
+    "backbone": "~1.1.2",
+    "underscore": "~1.7.0",
+    "normalize-css": "~3.0.2",
+    "underscore.string": "~2.3.3",
+    "text": "~2.0.12",
+    "handlebars": "~2.0.0",
+    "moment": "~2.8.3",
+    "almond": "~0.3.0"
+  }
+}

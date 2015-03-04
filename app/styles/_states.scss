@@ -1,0 +1,22 @@
+.is-hidden {
+  @extend %hidden;
+}
+
+.is-loading {
+  @include spinner(40px, 5px);
+}
+
+// Mobile devices
+@media screen and (max-width: $screen-sm) {
+
+}
+
+// Small devices (tablets, 768px)
+@media screen and (min-width: $screen-sm) {
+
+}
+
+// Large devices (desktop)
+@media screen and (min-width: $screen-lg) {
+
+}
