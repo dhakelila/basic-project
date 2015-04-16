@@ -1,0 +1,41 @@
+.wrap {
+  display: block;
+  max-width: rem($grid-max-width);
+  margin: 0 auto;
+  padding: 0 $grid-padding;
+
+  @media screen and (min-width: $screen-lg) {
+    padding: 0 $wrap-padding;
+  }
+}
+
+.row {
+  position: relative;
+  margin: 0 ($grid-gutter-width * -1);
+  @extend %clearfix;
+}
+
+%grid {
+  float: left;
+  padding: 0 $grid-gutter-width;
+  position: relative;
+  min-height: 1px;
+}
+
+@for $column from 1 through $grid-columns {
+  .grid-xs-#{$column},
+  .grid-sm-#{$column},
+  .grid-md-#{$column},
+  .grid-lg-#{$column} {
+    @extend %grid;
+  }
+}
+
+@for $column from 1 through $grid-columns {
+  .grid-#{$column} {
+    @include grid($column);
+  }
+  .offset-#{$column} {
+    @include offset($column);
+  }
+}

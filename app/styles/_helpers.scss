@@ -23,6 +23,12 @@
   border-radius: 0;
 }
 
+%list-reset {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
 %center {
   position: absolute;
   top: 50%;
@@ -74,18 +80,22 @@
 }
 
 //Fonts includer
-@mixin font-face($font-name, $font-file, $weight, $style: "normal") {
+@mixin font-face($font-name, $font-file, $font-weight) {
   @font-face {
     font-family: $font-name;
-    src: font-url("#{$font-file}.eot");
-    src: font-url("#{$font-file}.eot?#iefix") format("embedded-opentype"),
-         font-url("#{$font-file}.woff2") format("woff2"),
-         font-url("#{$font-file}.woff") format("woff"),
-         font-url("#{$font-file}.ttf") format("truetype"),
-         font-url("#{$font-file}.svg") format("svg");
-    font-weight: $weight;
-    font-style: $style;
+    src: url("../fonts/#{$font-file}.eot");
+    src: url("../fonts/#{$font-file}.eot?#iefix") format("embedded-opentype"),
+         url("../fonts/#{$font-file}.woff2") format("woff2"),
+         url("../fonts/#{$font-file}.woff") format("woff"),
+         url("../fonts/#{$font-file}.ttf") format("truetype"),
+         url("../fonts/#{$font-file}.svg") format("svg");
+    font-weight: $font-weight;
   }
+}
+
+//rem converter
+@function rem($px, $base: 16px) {
+  @return ($px / $base) * 1rem;
 }
 
 //Forms mixins

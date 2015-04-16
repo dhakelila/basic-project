@@ -7,22 +7,36 @@ $screen-lg: 1200px;
 $grid-columns: 12;
 $grid-max-width: 960px;
 $grid-gutter-width: 1%;
+$grid-padding: 0;
+$wrap-padding: 0;
 
+//Fonts
+$font-face-1: "proxima-nova";
 
 // Margins
-$large-margin: 40px;
-$medium-margin: 20px;
-$small-margin: 10px;
+$large-margin: rem(40px);
+$medium-margin: rem(20px);
+$small-margin: rem(10px);
 
 // Font-sizes
-$text-size: 16px;
+$large-text-size: rem(33px);
+$regular-text-size: rem(16px);
+$small-text-size: rem(13px); //main font size
 
 // Colors
 $white: #fff;
 $gray-dark: #444;
+$blue: #47B0E0;
+$dark-blue: #18314E;
+
+$light-grey-text: #8A9397;
+$dark-grey-text: #53595B;
+
+$light-grey-bg: #F2F2F2;
+$grey-borders: #CDD2D4;
 
 // Theme
-$bg-color-0: $white;
+$color-0: $blue;
 
 $text-color-0: $white;
-$text-color-1: $gray-dark;
+$text-color-1: $light-grey-text;
