@@ -1,9 +1,12 @@
+ ////////////////////
+ //*** extends  ***//
+ ////////////////////
+
 /**
  * Extends
  * Place here in alphabetic order.
- * Generic classes to extend.
+ * Abstract classes to extend.
  */
-
 %clearfix {
   &:before, &:after {
     display: table;
@@ -12,6 +15,12 @@
   &:after {
     clear: both;
   }
+}
+
+%button-reset {
+  appearance: none;
+  margin: 0;
+  line-height: 1em;
 }
 
 %form-field-reset {
@@ -57,10 +66,9 @@
 }
 
 
-/**
- * Mixins
- *
- */
+////////////////////
+//**** Mixins ****//
+////////////////////
 
 //Structure mixins
 @mixin grid($column) {
@@ -93,17 +101,20 @@
   }
 }
 
-//rem converter
-@function rem($px, $base: 16px) {
-  @return ($px / $base) * 1rem;
-}
-
 //Forms mixins
 @mixin placeholder() {
   &::-webkit-input-placeholder {@content}
   &:-moz-placeholder {@content}
   &::-moz-placeholder {@content}
   &:-ms-input-placeholder {@content}
+}
+
+//Text
+@mixin ellipsis($max-width) {
+  max-width: $max-width;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 //Decoration
@@ -118,6 +129,15 @@
 }
 
 //Shapes
+@mixin arrow ($width, $color, $border-width, $deg) {
+  width: $width;
+  height: $width;
+  border-top: $border-width solid $color;
+  border-left: $border-width solid $color;
+  transform: rotate($deg);
+  pointer-events: none;
+}
+
 @mixin equi-triangle ($width, $color, $direction) {
   width: 0;
   height: 0;
@@ -140,15 +160,7 @@
   }
 }
 
-@mixin arrow ($width, $color, $border-width, $deg) {
-  width: $width;
-  height: $width;
-  border-top: $border-width solid $color;
-  border-left: $border-width solid $color;
-  transform: rotate($deg);
-  pointer-events: none;
-}
-
+//Loader
 @mixin spinner ($size, $border-width){
 
   &:before {
@@ -207,5 +219,11 @@
   }
 }
 
+////////////////////
+//*** Functions **//
+////////////////////
 
-
+//rem converter
+@function rem($px, $base: 16px) {
+  @return ($px / $base) * 1rem;
+}

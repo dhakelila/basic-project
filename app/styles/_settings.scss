@@ -1,42 +1,70 @@
-// Screens
-$screen-sm: 540px;
-$screen-md: 960px;
-$screen-lg: 1200px;
+/*
+ * Add here values that
+ * affect the whole proyect
+ */
+////////////////////
+//**** Screen ****//
+////////////////////
+$screen-s: 540px;
+$screen-m: 768px;
+$screen-l: 960px;
+$screen-xl: 1200px;
 
-// Grid
+
+////////////////////
+//****  Grid  ****//
+////////////////////
 $grid-columns: 12;
 $grid-max-width: 960px;
 $grid-gutter-width: 1%;
 $grid-padding: 0;
 $wrap-padding: 0;
 
-//Fonts
-$font-face-1: "proxima-nova";
 
-// Margins
-$large-margin: rem(40px);
-$medium-margin: rem(20px);
-$small-margin: rem(10px);
+////////////////////
+//**** Fonts ****//
+////////////////////
+$font-main: "Raleway";
+$font-numbers: "Lato";
 
-// Font-sizes
-$large-text-size: rem(33px);
-$regular-text-size: rem(16px);
-$small-text-size: rem(13px); //main font size
+//Font sizes
+$font-size-extra-big: 52px;
+$font-size-big: 40px;
+$font-size-medium: 26px;
+$font-size: 15px;
+$font-size-small: 12px;
 
-// Colors
+
+////////////////////
+//**** Colors ****//
+////////////////////
 $white: #fff;
-$gray-dark: #444;
-$blue: #47B0E0;
-$dark-blue: #18314E;
+$black: #000;
+$navy-blue: #1A3398;
+$dark-blue: #303F5A;
+$fucsia: #A80041;
 
-$light-grey-text: #8A9397;
-$dark-grey-text: #53595B;
+//Theme colors
+$color-1: $navy-blue;
+$color-2: $fucsia;
+$color-3: $dark-blue;
 
-$light-grey-bg: #F2F2F2;
-$grey-borders: #CDD2D4;
+$dark-grey: #474444;
+$medium-grey: #595959;
+$soft-grey: #afafaf;
+$light-grey: #dedede;
+$ultra-light-grey: #F0F0F0;
 
-// Theme
-$color-0: $blue;
+//Font colors
+$font-color-1: $dark-grey;
+$font-color-2: $white;
+$font-color-3: $soft-grey;
 
-$text-color-0: $white;
-$text-color-1: $light-grey-text;
+
+////////////////////
+//**** Margins ***//
+////////////////////
+$margin-extra-large: 40px;
+$margin-large: 30px;
+$margin-medium: 20px;
+$margin-small: 10px;

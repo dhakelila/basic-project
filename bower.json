@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "A webapp",
   "license": "MIT",
+  "author": [
+    "Clara Linos <clara.linos@vizzuality.com>"
+  ],
   "ignore": [
     "**/.*",
     "node_modules",
@@ -17,6 +20,8 @@
     "underscore": "~1.7.0",
     "normalize-css": "~3.0.2",
     "underscore.string": "~2.3.3",
+    "d3": "~3.5.5",
+    "chosen": "~1.4.2",
     "text": "~2.0.12",
     "handlebars": "~2.0.0",
     "moment": "~2.8.3",
