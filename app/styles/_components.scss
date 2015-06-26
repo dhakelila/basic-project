@@ -1,0 +1,46 @@
+@mixin switcher ($width, $height, $color, $bg-color, $bg-color-active) {
+  display: inline-block;
+  position: relative;
+  width: $width;
+  height: $height;
+
+  label {
+    position: absolute;
+    width: $width;
+    height: $height;
+    border: 1px solid $color;
+    background-color: $bg-color;
+    border-radius: $height;
+    cursor: pointer;
+    transition: .2s ease-in;
+  }
+
+  input {
+    @extend %form-field-reset;
+    @extend %centery;
+    z-index: 1;
+    right: 2px;
+    width: $height - 4px;
+    height: $height - 4px;
+    border-radius: 50%;
+    background-color: $color;
+    transition: .2s ease-in;
+  }
+
+  input:checked {
+    right: $width - $height + 1px;
+    background-color: $white;
+
+    & + label {
+      // background-color: $bg-color-active;
+    }
+  }
+}
+
+/*
+  switcher HTML
+  <div class="switcher">
+    <input id="{{slug}}" type="checkbox">
+    <label for="{{slug}}"></label>
+  </div>
+ */
