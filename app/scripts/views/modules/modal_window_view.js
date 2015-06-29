@@ -3,16 +3,16 @@ define([
   'underscore',
   'backbone',
   'handlebars',
-  'text!templates/modal_window_tpl.hbs'
-], function($, _, Backbone, Handlebars, tpl) {
+  'text!templates/helpers/modal_window_tpl.handlebars'
+], function($, _, Backbone, handlebars, tpl) {
 
   'use strict';
 
   var ModalWindowView = Backbone.View.extend({
 
-    el: '#wellcome',
+    el: 'body',
 
-    template: Handlebars.compile(tpl),
+    template: handlebars.compile(tpl),
 
     events: function() {
       if (window.ontouchstart) {
@@ -27,18 +27,17 @@ define([
       };
     },
 
-    initialize: function() {
-      this.$body = $('body');
-      this.$html = $('html');
-
-      this.render();
+    initialize: function(data) {
+      if (data) {
+        this.render(data);
+      };
 
       $(document).keyup(_.bind(this.onKeyUp, this));
     },
 
-    render: function() {
-      // Render modal base
-      this.$el.html(this.template());
+    render: function(data) {
+      this.$el.append(this.template(data));
+      this.toogleState();
     },
 
     onKeyUp: function(e) {
@@ -50,8 +49,14 @@ define([
     },
 
     close: function() {
-      this.remove();
-      this.$body.removeClass('has-no-scroll');
+      console.log('hola');
+      $('.m-modal-window').remove();
+      this.toogleState();
+    },
+
+    toogleState: function() {
+      this.$el.toggleClass('has-no-scroll');
+      $('html').toggleClass('has-no-scroll');
     }
 
   });

@@ -33,3 +33,8 @@
 .btn-i-am-a-button {
   @extend %btn-blue;
 }
+
+.btn-info {
+  @include circle(15px, $soft-grey, 1px, $soft-grey, border);
+  font-size: $font-size-small;
+}

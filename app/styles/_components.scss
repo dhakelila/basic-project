@@ -1,3 +1,10 @@
+/*
+ * SWITCHER
+ * <div class="switcher">
+ *  <input id="{{slug}}" type="checkbox">
+ *  <label for="{{slug}}"></label>
+ * </div>
+ */
 @mixin switcher ($width, $height, $color, $bg-color, $bg-color-active) {
   display: inline-block;
   position: relative;
@@ -38,9 +45,23 @@
 }
 
 /*
-  switcher HTML
-  <div class="switcher">
-    <input id="{{slug}}" type="checkbox">
-    <label for="{{slug}}"></label>
-  </div>
+ * CIRCLE
  */
+ @mixin circle ($diameter, $text-color, $border-width, $circle-color, $circle-type) {
+   box-sizing: border-box;
+   width: $diameter;
+   height: $diameter;
+   line-height: $diameter;
+   text-align: center;
+   border-radius: 50%;
+   color: $text-color;
+
+   @if ($circle-type == solid) {
+     background-color: $bg-color;
+   } @else if ($circle-type == border) {
+     border: $border-width solid $circle-color;
+   } @else if ($circle-type == circle-with-border){
+     border: $border-width solid $circle-color;
+     background-color: $circle-color;
+   }
+ }
