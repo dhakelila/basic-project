@@ -201,7 +201,7 @@ module.exports = function(grunt) {
         ],
         tasks: [
           'sass',
-          'grunticon',
+          // 'grunticon',
           'autoprefixer',
           'scsslint'
         ]
@@ -225,7 +225,7 @@ module.exports = function(grunt) {
     concurrent: {
       server: [
         'sass',
-        'grunticon'
+        // 'grunticon'
       ]
     }
 
@@ -238,7 +238,7 @@ module.exports = function(grunt) {
     'connect:server',
     'watch',
     'sass',
-    'grunticon'
+    // 'grunticon'
   ]);
 
   grunt.registerTask('test', [
@@ -248,7 +248,7 @@ module.exports = function(grunt) {
   grunt.registerTask('default', [
     'server',
     'sass',
-    'grunticon'
+    // 'grunticon'
   ]);
 
   grunt.registerTask('build', [
@@ -258,7 +258,7 @@ module.exports = function(grunt) {
     'useminPrepare',
     'copy:dist',
     'sass',
-    'grunticon',
+    // 'grunticon',
     'requirejs',
     'cssmin',
     'autoprefixer',
