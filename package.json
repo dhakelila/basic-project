@@ -18,7 +18,6 @@
     "grunt-contrib-sass": "^0.8.1",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-gh-pages": "^0.9.1",
-    "grunt-grunticon": "^2.1.2",
     "grunt-requirejs": "^0.4.2",
     "grunt-scss-lint": "^0.1.11",
     "grunt-usemin": "^2.4.0",

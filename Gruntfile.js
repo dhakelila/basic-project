@@ -75,18 +75,6 @@ module.exports = function(grunt) {
       }
     },
 
-    scsslint: {
-      allFiles: [
-        '<%= root.app %>/styles/**/*.scss'
-      ],
-      options: {
-        bundleExec: false,
-        colorizeOutput: true,
-        config: '.scss-lint.yml',
-        reporterOutput: null
-      },
-    },
-
     autoprefixer: {
       options: {
         browsers: ['last 2 version']
@@ -108,23 +96,6 @@ module.exports = function(grunt) {
         }
       }
     },
-
-    // grunticon: {
-    //   myIcons: {
-    //     files: [{
-    //       expand: true,
-    //       cwd: '<%= root.app %>/images/icons',
-    //       src: ['*.svg', '*.png'],
-    //       dest: '<%= root.app %>/images/icons-output'
-    //     }],
-    //     options: {
-    //       enhanceSVG: true,
-    //       loadersnipper: 'grunticon.loader.js',
-    //       defaultWidth:'30px',
-    //       defaultHeight: '30px'
-    //     }
-    //   }
-    // },
 
     jshint: {
       options: {
@@ -202,9 +173,7 @@ module.exports = function(grunt) {
         ],
         tasks: [
           'sass',
-          // 'grunticon',
           'autoprefixer',
-          'scsslint'
         ]
       },
       scripts: {
@@ -226,7 +195,6 @@ module.exports = function(grunt) {
     concurrent: {
       server: [
         'sass',
-        // 'grunticon'
       ]
     }
 
@@ -239,7 +207,6 @@ module.exports = function(grunt) {
     'connect:server',
     'watch',
     'sass',
-    // 'grunticon'
   ]);
 
   grunt.registerTask('test', [
@@ -249,7 +216,6 @@ module.exports = function(grunt) {
   grunt.registerTask('default', [
     'server',
     'sass',
-    // 'grunticon'
   ]);
 
   grunt.registerTask('build', [
@@ -259,7 +225,6 @@ module.exports = function(grunt) {
     'useminPrepare',
     'copy:dist',
     'sass',
-    // 'grunticon',
     'requirejs',
     'cssmin',
     'autoprefixer',
