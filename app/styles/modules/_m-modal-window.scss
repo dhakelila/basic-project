@@ -25,8 +25,9 @@
   display: flex;
   margin: auto;
   z-index: 14;
-  width: 75%;
-  height: 75%;
+  //optional, min size.
+  min-width: 75%;
+  min-height: 75%;
 }
 
 .modal-container {

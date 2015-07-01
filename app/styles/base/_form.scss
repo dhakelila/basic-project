@@ -76,3 +76,18 @@
 .chosen-search {
   display: none;
 }
+
+////////////////////
+//**** Forms *****//
+////////////////////
+
+input:not([type = "checkbox"]),
+select {
+  @extend %form-field-reset;
+  border: 1px solid $light-grey;
+  border-radius: 3px;
+  background-color: $white;
+  min-height: 40px;
+  padding: 0 rem($margin-small);
+  color: $font-color-3;
+}
