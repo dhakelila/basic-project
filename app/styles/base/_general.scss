@@ -11,8 +11,9 @@
 }
 
 body {
+  color: red;
   margin: 0;
-  font-family: $font-face-1, Helvetica, Arial, sans-serif;
+  font-family: $font-main, Helvetica, Arial, sans-serif;
   color: $font-color-1;
   font-size: $font-size;
   -webkit-font-smoothing: antialiased;

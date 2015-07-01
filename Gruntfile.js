@@ -70,25 +70,26 @@ module.exports = function(grunt) {
       },
       app: {
         files: {
-          '<%= root.tmp %>/styles/main.css': '<%= root.app %>/styles/main.scss'
+          '<%= root.tmp %>/styles/main.css': '<%= root.app %>/styles/styles.scss'
         }
       }
     },
 
     scsslint: {
       allFiles: [
-        '<%= root.app %>/styles/{,*/}*{,*/}*.scss'
+        '<%= root.app %>/styles/**/*.scss'
       ],
       options: {
         bundleExec: false,
+        colorizeOutput: true,
         config: '.scss-lint.yml',
-        colorizeOutput: true
+        reporterOutput: null
       },
     },
 
     autoprefixer: {
       options: {
-        browsers: ['last 2 version', 'ie 9']
+        browsers: ['last 2 version']
       },
       build: {
         src: '<%= root.tmp %>/styles/main.css',
@@ -108,22 +109,22 @@ module.exports = function(grunt) {
       }
     },
 
-    grunticon: {
-      myIcons: {
-        files: [{
-          expand: true,
-          cwd: '<%= root.app %>/images/icons',
-          src: ['*.svg', '*.png'],
-          dest: '<%= root.app %>/images/icons-output'
-        }],
-        options: {
-          enhanceSVG: true,
-          loadersnipper: 'grunticon.loader.js',
-          defaultWidth:'30px',
-          defaultHeight: '30px'
-        }
-      }
-    },
+    // grunticon: {
+    //   myIcons: {
+    //     files: [{
+    //       expand: true,
+    //       cwd: '<%= root.app %>/images/icons',
+    //       src: ['*.svg', '*.png'],
+    //       dest: '<%= root.app %>/images/icons-output'
+    //     }],
+    //     options: {
+    //       enhanceSVG: true,
+    //       loadersnipper: 'grunticon.loader.js',
+    //       defaultWidth:'30px',
+    //       defaultHeight: '30px'
+    //     }
+    //   }
+    // },
 
     jshint: {
       options: {
@@ -197,7 +198,7 @@ module.exports = function(grunt) {
     watch: {
       styles: {
         files: [
-          '<%= root.app %>/styles/{,*/}{,*/}*.scss'
+          '<%= root.app %>/styles/**/*.scss'
         ],
         tasks: [
           'sass',

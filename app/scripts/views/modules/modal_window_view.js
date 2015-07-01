@@ -30,7 +30,7 @@ define([
     initialize: function(data) {
       if (data) {
         this.render(data);
-      };
+      }
 
       $(document).keyup(_.bind(this.onKeyUp, this));
     },
